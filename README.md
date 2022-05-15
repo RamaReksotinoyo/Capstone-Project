@@ -6,9 +6,9 @@ Indonesia as an archipelagic country has a large enough potential for fish resou
 ## Capstone Project Team: 
 | Bangkit-ID | Name | Github-Profile |
 | ------ | ------ | ------ | 
-| Anugrah Tri Ramadhan  | M7007G0661  | https://github.com/RamaReksotinoyo |
-| Rhamdan Syahrul Mubarak | M2008F0864  |  |
-| Ni'Matul Husna | A7008F0883  |  |
-| Nabila Apriliana Widiyono | A2008F0880 |  |
-| Adisti Anjani Putri | 	C2014F1370 | https://github.com/adistianjani |
-| Muthia Farah Hanifa  | C2224W2055 |  |
+| M7007G0661 | Anugrah Tri Ramadhan | https://github.com/RamaReksotinoyo |
+| M2008F0864 | Rhamdan Syahrul Mubarak | https://github.com/rhamdansm |
+| A7008F0883 | Ni'Matul Husna | https://github.com/Nimatulhusna |
+| A2008F0880 | Nabila Apriliana Widiyono | https://github.com/nabilaapriliana |
+| C2014F1370 | Adisti Anjani Putri | https://github.com/adistianjani |
+| C2224W2055 | Muthia Farah Hanifa |  |
