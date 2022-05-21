@@ -12,3 +12,29 @@ Indonesia as an archipelagic country has a large enough potential for fish resou
 | A2008F0880 | Nabila Apriliana Widiyono | https://github.com/nabilaapriliana |
 | C2014F1370 | Adisti Anjani Putri | https://github.com/adistianjani |
 | C2224W2055 | Muthia Farah Hanifa |  |
+
+### Features for Consumer-side
+
+| Profile Consumer | Fish Caught | Order | Transaction | History |
+| ------ | ------ | ------ | ----- | ----- | 
+| Partner's name | Fish name | Quantity | Payment | Status Track |
+| Phone Number | Notes  | Total price |  |  |
+| Email | Photo |  |  |  |
+|  | Harbor location |  |  |  |
+|  | Weight |  |  |  |
+|  | Quantity |  |  |  |
+|  | Price |  |  |  |
+
+POV Consumer: 
+- Profile
+- Fish caught
+- Order
+- Payment
+- History
+
+Optional:
+- Chat
+- Review order
+- Notification
+
+*notes: consumer -> partner business (pelaku bisnis/mitra)*
