@@ -13,6 +13,8 @@ Indonesia as an archipelagic country has a large enough potential for fish resou
 | C2014F1370 | Adisti Anjani Putri | https://github.com/adistianjani |
 | C2224W2055 | Muthia Farah Hanifa |  |
 
+---
+
 ### Features for Consumer-side
 
 | Profile Consumer | Fish Caught | Order | Transaction | History |
