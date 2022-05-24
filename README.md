@@ -11,7 +11,7 @@ Indonesia as an archipelagic country has a large enough potential for fish resou
 | A7008F0883 | Ni'Matul Husna | https://github.com/Nimatulhusna |
 | A2008F0880 | Nabila Apriliana Widiyono | https://github.com/nabilaapriliana |
 | C2014F1370 | Adisti Anjani Putri | https://github.com/adistianjani |
-| C2224W2055 | Muthia Farah Hanifa |  |
+| C2224W2055 | Muthia Farah Hanifa |  https://github.com/muthiafarrr |
 
 ---
 
