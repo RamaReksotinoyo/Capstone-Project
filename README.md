@@ -44,4 +44,9 @@ Optional:
 <!-- UI FI$HKU APP -->
 ## UI FI$HKU APP
 
-Link Figma : [https://www.figma.com/file/zw1PcImhnitHGJJzz3kz1u/FI%24HKU-APP?node-id=0%3A1](https://www.figma.com/file/zw1PcImhnitHGJJzz3kz1u/FI%24HKU-APP?node-id=0%3A1)
+[Figma](https://www.figma.com/file/zw1PcImhnitHGJJzz3kz1u/FI%24HKU-APP?node-id=0%3A1)
+
+
+## API endpoints doc
+
+[API endpoints](https://docs.google.com/spreadsheets/d/1omsQ0-AptgsEa4gTAkWx9a4gFRtGzfAZEsuSfxWwBIU/edit?usp=sharing)
