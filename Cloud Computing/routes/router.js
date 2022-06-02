@@ -87,7 +87,7 @@ router.post("/login", loginValidation, (req, res, next) => {
 });
 
 // MENDAPATKAN DATA CONSUMER DARI DATABASE YG SUDAH TERDAFTAR
-router.get("/consumer/:email", registerValidation, (req, res, next) => {
+router.get("/consumer", registerValidation, (req, res, next) => {
     if (!req.headers.authorization || !req.headers.authorization.startsWith("Bearer") || !req.headers.authorization.split(" ")[1]) {
         return res.status(422).json({
             message: "Sediakan token dari akun yang login",
@@ -97,7 +97,7 @@ router.get("/consumer/:email", registerValidation, (req, res, next) => {
     const decoded = jwt.verify(theToken, "the-super-strong-secrect");
     db.query("SELECT * FROM consumer where email = ?", decoded.id, function(err, results, fields) {
         if (err) throw err;
-        return res.send({ error: false, data: results[0], message: "Data consumer berhasil didapat." }).write("berhasil masuk").redirect("/dashboard");
+        return res.send({ error: false, data: results[0], message: "Data consumer berhasil didapat." });
     });
 });
 
@@ -175,9 +175,22 @@ router.get("/total_price", (req, res) => {
 
     db.query(total_price, (err, result) => {
         if (err) throw err;
-        return res.send(result).post(`INSERT INTO cart(total_price) VALUES (${total_price})`);
+        return res.send(result);
     });
 });
+
+router.put("/total_price/:id_cart", (req, res) => {
+    const total = req.body.total_price;
+    const id_cart = req.params.id_cart;
+    const sqlQuery = `UPDATE cart SET total_price = '${total}' WHERE id_cart = '${id_cart}'`;
+
+    //  UPDATE fish_caught SET location_harbor = '${location_harbor}', fish_name = '${fish_name}', time_caught = '${time_caught}', desc_fish = '${desc_fish}', stock = '${stock}', price = '${price}' WHERE id_fish = '${id_fish}';
+
+    db.query(sqlQuery, (err, result) => {
+        if (err) throw err;
+        return res.send(result);
+    });
+})
 
 // ORDER ambil data dari cart
 router.get("/order/:id_cart", (req, res) => {
@@ -196,7 +209,7 @@ router.post("/order", (req, res) => {
     const id_fisher = req.body.id_fisher;
     const address = req.body.address;
 
-    const sqlQuery = `INSERT INTO ordering (id_cart, id_fisher, address) VALUES ('${id_cart}', '${id_fisher}', '${address}')`;
+    const sqlQuery = `INSERT INTO ordering(id_cart, id_fisher, address) VALUES('${id_cart}', '${id_fisher}', '${address}')`;
 
     db.query(sqlQuery, (err, result) => {
         if (err) throw err;
@@ -205,6 +218,17 @@ router.post("/order", (req, res) => {
 });
 
 // HISTORY
+router.post("/history", (req, res) => {
+    const id_order = req.body.id_order;
+    const status_order = req.body.status_order;
+    const sqlQuery = `INSERT INTO history(id_order, status_order) VALUES('${id_order}', '${status_order}')`;
+
+    db.query(sqlQuery, (err, result) => {
+        if (err) throw err;
+        return res.send(result);
+    });
+});
+
 router.get("/history/:id_history", (req, res) => {
     const id_history = req.params.id_history;
     const sqlQuery = `SELECT * FROM history WHERE id_history = ${id_history}`;
@@ -235,8 +259,7 @@ router.post("/registerFisher", registerValidation, (req, res, next) => {
                     });
                 } else {
                     // sudah meng-hash password => tambah ke database
-                    db.query(
-                        `INSERT INTO fisher (name, email, password, phone_number, location_harbor) VALUES ('${req.body.name}', ${db.escape(req.body.email)}, ${db.escape(hash)}, '${req.body.phone_number}', '${req.body.location_harbor}')`,
+                    db.query(`INSERT INTO fisher(name, email, password, phone_number, location_harbor) VALUES('${req.body.name}', ${db.escape(req.body.email)}, ${db.escape(hash)}, '${req.body.phone_number}', '${req.body.location_harbor}')`,
                         (err, result) => {
                             if (err) {
                                 throw err;
@@ -257,7 +280,7 @@ router.post("/registerFisher", registerValidation, (req, res, next) => {
 
 // LOGIN AKUN FISHKU
 router.post("/loginFisher", loginValidation, (req, res, next) => {
-    db.query(`SELECT * FROM fisher WHERE email = ${db.escape(req.body.email)};`, (err, result) => {
+    db.query(`SELECT * FROM fisher WHERE email = ${ db.escape(req.body.email) };`, (err, result) => {
         // akun tidak ditemukan
         if (err) {
             throw err;
@@ -296,7 +319,7 @@ router.post("/loginFisher", loginValidation, (req, res, next) => {
 });
 
 // MENDAPATKAN DATA fisher DARI DATABASE YG SUDAH TERDAFTAR
-router.get("/fisher/:email", registerValidation, (req, res, next) => {
+router.get("/fisher", registerValidation, (req, res, next) => {
     if (!req.headers.authorization || !req.headers.authorization.startsWith("Bearer") || !req.headers.authorization.split(" ")[1]) {
         return res.status(422).json({
             message: "Sediakan token dari akun yang login",
@@ -306,7 +329,7 @@ router.get("/fisher/:email", registerValidation, (req, res, next) => {
     const decoded = jwt.verify(theToken, "the-super-strong-secrect");
     db.query("SELECT * FROM fisher where email = ?", decoded.id, function(err, results, fields) {
         if (err) throw err;
-        return res.send({ error: false, data: results[0], message: "Data fisher berhasil didapat." }).write("berhasil masuk").redirect("/dashboard");
+        return res.send({ error: false, data: results[0], message: "Data fisher berhasil didapat." });
     });
 });
 
@@ -343,7 +366,7 @@ router.post("/sendFishData", (req, res) => {
     const stock = req.body.stock;
     const price = req.body.price;
 
-    const sqlQuery = `INSERT INTO fish_caught (id_fisher, location_harbor, fish_name, time_caught, desc_fish, stock, price) VALUES ('${id_fisher}', '${location_harbor}', '${fish_name}', '${time_caught}', '${desc_fish}', '${stock}','${price}')`;
+    const sqlQuery = `INSERT INTO fish_caught(id_fisher, location_harbor, fish_name, time_caught, desc_fish, stock, price) VALUES('${id_fisher}', '${location_harbor}', '${fish_name}', '${time_caught}', '${desc_fish}', '${stock}', '${price}')`;
 
     db.query(sqlQuery, (err, result) => {
         if (err) throw err;
@@ -371,7 +394,7 @@ router.put("/editFishData/:id_fish", (req, res) => {
     const stock = req.body.stock;
     const price = req.body.price;
 
-    const sqlQuery = `UPDATE fish_caught SET location_harbor = '${location_harbor}', fish_name = '${fish_name}', time_caught = '${time_caught}', desc_fish = '${desc_fish}', stock = '${stock}',price = '${price}' WHERE id_fish ='${id_fish}' `;
+    const sqlQuery = `UPDATE fish_caught SET location_harbor = '${location_harbor}', fish_name = '${fish_name}', time_caught = '${time_caught}', desc_fish = '${desc_fish}', stock = '${stock}', price = '${price}' WHERE id_fish = '${id_fish}'`;
 
     db.query(sqlQuery, (err, result) => {
         if (err) throw err;
@@ -382,7 +405,7 @@ router.put("/editFishData/:id_fish", (req, res) => {
 // hapus data fish caught
 router.delete("/deleteFishData/:id_fish", (req, res) => {
     const id_fish = req.params.id_fish;
-    const sqlQuery = `DELETE FROM fish_caught WHERE id_fish = ${id_fish}`;
+    const sqlQuery = `DELETE FROM fish_caught WHERE id_fish = ${ id_fish }`;
 
     db.query(sqlQuery, (err, result) => {
         if (err) throw err;
@@ -393,7 +416,7 @@ router.delete("/deleteFishData/:id_fish", (req, res) => {
 // ORDER yg masuk (buat fisher)
 router.get("/order/:id_order", (req, res) => {
     const order = req.params.id_order;
-    const sqlQuery = `SELECT * FROM ordering WHERE id_order = ${order}`;
+    const sqlQuery = `SELECT * FROM ordering WHERE id_order = ${ order }`;
 
     db.query(sqlQuery, (err, result) => {
         if (err) throw err;
@@ -402,11 +425,11 @@ router.get("/order/:id_order", (req, res) => {
 });
 
 // HISTORY
-router.post("/history", (req, res) => {
+router.post("/historyFisher", (req, res) => {
     const id_order = req.body.id_order;
     const status_order = req.body.status_order;
 
-    const sqlQuery = `INSERT INTO history (id_order, status_order) VALUES ('${id_order}', '${status_order}')`;
+    const sqlQuery = `INSERT INTO history(id_order, status_order) VALUES('${id_order}', '${status_order}')`;
 
     db.query(sqlQuery, (err, result) => {
         if (err) throw err;
