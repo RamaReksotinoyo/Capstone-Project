@@ -9,5 +9,5 @@
 
 
 ## ERD Database
-![image](https://user-images.githubusercontent.com/79828903/171630537-67fc3185-ab03-4ce8-8e9a-407b2112eedd.png)
+![image](https://user-images.githubusercontent.com/79828903/171635145-3fa006da-a30b-4e5a-8dc6-6fb6ab3b1528.png)
 
