@@ -7,28 +7,25 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 var http = require("http");
 
-router.get("/test", function(req, res) {
-    res.write("tes aja uhuy");
-});
-
 // AS CONSUMER
 
 // REGISTER AKUN FISHKU
 router.post("/register", registerValidation, (req, res, next) => {
     db.query(`SELECT * FROM consumer WHERE LOWER(email) = LOWER(${db.escape(req.body.email)});`, (err, result) => {
+        // email tersedia
         if (result.length) {
             return res.status(409).send({
                 msg: "Akun ini sudah ada!",
             });
         } else {
-            // email tersedia
+
             bcrypt.hash(req.body.password, 10, (err, hash) => {
                 if (err) {
                     return res.status(500).send({
                         msg: err,
                     });
                 } else {
-                    // sudah meng-hash password => tambah ke database
+                    // sudah meng-hash password -> tambah ke database
                     db.query(`INSERT INTO consumer (name, email, password, phone_number, address) VALUES ('${req.body.name}', ${db.escape(req.body.email)}, ${db.escape(hash)}, '${req.body.phone_number}', '${req.body.address}')`, (err, result) => {
                         if (err) {
                             throw err;
@@ -72,7 +69,7 @@ router.post("/login", loginValidation, (req, res, next) => {
             }
             if (bResult) {
                 const token = jwt.sign({ id: result[0].id }, "the-super-strong-secrect");
-
+                // login berhasil
                 return res.status(200).send({
                     msg: "Logged in.",
                     token,
@@ -133,7 +130,7 @@ router.get("/fish_caught", (req, res) => {
 });
 
 // SEARCH IKAN
-router.get("/fish_caught/fish_name?search=:fish_name", (req, res) => {
+router.get("/fish_caught/search?fish_name=:fish_name", (req, res) => {
     const fishName = req.params.fish_name;
     const sqlQuery = `SELECT * FROM fish_caught WHERE fish_name = "${fishName}"`;
     db.query(sqlQuery, (err, result) => {
@@ -184,7 +181,6 @@ router.put("/total_price/:id_cart", (req, res) => {
     const id_cart = req.params.id_cart;
     const sqlQuery = `UPDATE cart SET total_price = '${total}' WHERE id_cart = '${id_cart}'`;
 
-    //  UPDATE fish_caught SET location_harbor = '${location_harbor}', fish_name = '${fish_name}', time_caught = '${time_caught}', desc_fish = '${desc_fish}', stock = '${stock}', price = '${price}' WHERE id_fish = '${id_fish}';
 
     db.query(sqlQuery, (err, result) => {
         if (err) throw err;
@@ -246,19 +242,20 @@ router.get("/history/:id_history", (req, res) => {
 // REGISTER AKUN FISHKU
 router.post("/registerFisher", registerValidation, (req, res, next) => {
     db.query(`SELECT * FROM fisher WHERE LOWER(email) = LOWER(${db.escape(req.body.email)});`, (err, result) => {
+        // email tersedia
         if (result.length) {
             return res.status(409).send({
                 msg: "Akun ini sudah ada!",
             });
         } else {
-            // email tersedia
+
             bcrypt.hash(req.body.password, 10, (err, hash) => {
                 if (err) {
                     return res.status(500).send({
                         msg: err,
                     });
                 } else {
-                    // sudah meng-hash password => tambah ke database
+                    // sudah meng-hash password -> tambah ke database
                     db.query(`INSERT INTO fisher(name, email, password, phone_number, location_harbor) VALUES('${req.body.name}', ${db.escape(req.body.email)}, ${db.escape(hash)}, '${req.body.phone_number}', '${req.body.location_harbor}')`,
                         (err, result) => {
                             if (err) {
@@ -414,7 +411,16 @@ router.delete("/deleteFishData/:id_fish", (req, res) => {
 });
 
 // ORDER yg masuk (buat fisher)
-router.get("/order/:id_order", (req, res) => {
+router.get("/getOrder", (req, res) => {
+    const sqlQuery = "SELECT * FROM ordering";
+    db.query(sqlQuery, (err, result) => {
+        if (err) throw err;
+        return res.send(result);
+    });
+
+})
+
+router.get("/getOrder/:id_order", (req, res) => {
     const order = req.params.id_order;
     const sqlQuery = `SELECT * FROM ordering WHERE id_order = ${ order }`;
 
