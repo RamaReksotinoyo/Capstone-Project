@@ -443,4 +443,12 @@ router.post("/historyFisher", (req, res) => {
     });
 });
 
+// STORING IMAGE
+const controller = require("../controller/controller");
+
+router.post("/upload", controller.upload);
+router.get("/files", controller.getListFiles);
+router.get("/files/:name", controller.download);
+
+
 module.exports = router;
