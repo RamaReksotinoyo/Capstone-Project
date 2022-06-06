@@ -1,0 +1,45 @@
+[{
+        "id_fish": 1,
+        "id_consumer": null,
+        "id_fisher": 1,
+        "location_harbor": "Pelabuhan Kalimas",
+        "fish_name": "Tongkol",
+        "time_caught": null,
+        "desc_fish": "",
+        "stock": 13,
+        "price": 40000
+    },
+    {
+        "id_fish": 2,
+        "id_consumer": null,
+        "id_fisher": 1,
+        "location_harbor": "Pelabuhan Kalimas",
+        "fish_name": "Tuna",
+        "time_caught": null,
+        "desc_fish": null,
+        "stock": 14,
+        "price": 46000
+    },
+    {
+        "id_fish": 3,
+        "id_consumer": null,
+        "id_fisher": 1,
+        "location_harbor": "Pelabuhan Kalimas",
+        "fish_name": "Kakap",
+        "time_caught": null,
+        "desc_fish": null,
+        "stock": 20,
+        "price": 31000
+    },
+    {
+        "id_fish": 4,
+        "id_consumer": null,
+        "id_fisher": 1,
+        "location_harbor": "Pelabuhan Kalimas",
+        "fish_name": "Bawal",
+        "time_caught": null,
+        "desc_fish": null,
+        "stock": 43,
+        "price": 30000
+    }
+]

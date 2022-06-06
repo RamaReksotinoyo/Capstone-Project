@@ -1,0 +1,11 @@
+[{
+    "id_fish": 2,
+    "id_consumer": null,
+    "id_fisher": 1,
+    "location_harbor": "Pelabuhan Kalimas",
+    "fish_name": "Tuna",
+    "time_caught": null,
+    "desc_fish": null,
+    "stock": 14,
+    "price": 46000
+}]

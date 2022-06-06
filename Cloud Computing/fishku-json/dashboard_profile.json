@@ -1,0 +1,11 @@
+{
+    "data": [{
+        "id": 22,
+        "name": "Adisti",
+        "email": "adisti90@gmail.com",
+        "password": "$2a$10$61FqRyDxZ/QEvFUx/pt0ru73epEh2Px4YUTjMekhwmYnNx2SQr0IK",
+        "phone_number": "083498387342",
+        "address": "Banjar Griya"
+    }],
+    "message": "Data ditampilkan"
+}

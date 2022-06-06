@@ -1,0 +1,12 @@
+{
+    "msg": "Logged in.",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImlhdCI6MTY1NDQ5NzA5NX0.p4FrFpzoeGcaTbGhJsCMzYe7yOG1rC6DiD7pMlB9jak",
+    "user": {
+        "id": 22,
+        "name": "Adisti",
+        "email": "adisti90@gmail.com",
+        "password": "$2a$10$61FqRyDxZ/QEvFUx/pt0ru73epEh2Px4YUTjMekhwmYnNx2SQr0IK",
+        "phone_number": "083498387342",
+        "address": "Banjar Griya"
+    }
+}
