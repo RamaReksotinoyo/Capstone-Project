@@ -15,10 +15,14 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(cors());
+let corsOptions = {
+    origin: "http://localhost:8081",
+};
+app.use(cors(corsOptions));
 
 // set router nya
 app.use("/api", router);
+
 
 // error handling untuk server
 app.use((err, req, res, next) => {
@@ -30,5 +34,5 @@ app.use((err, req, res, next) => {
 });
 
 // server app nya
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server running at port: ${PORT}`));
