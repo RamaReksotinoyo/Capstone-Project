@@ -20,7 +20,7 @@ Indonesia as an archipelagic country has a large enough potential for fish resou
 | Profile Consumer | Fish Caught | Cart | Ordering | History | Freshness Detection |
 | ------ | ------ | ------ | ----- | ----- | ----- |
 | Name | Fish name | Quantity | Time order | Status Order | Take a picture from fish eye |
-| Phone Number | Description  | Expedition service | Address  | Result of freshness detection |
+| Phone Number | Description  | Expedition service | Address  |  | Result of freshness detection |
 | Email | Photo | Notes |  |  | |
 | Address | Harbor location | Total price |  |  | |
 | Password | Time caught |  |  |  | |
