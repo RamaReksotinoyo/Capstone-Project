@@ -17,29 +17,17 @@ Indonesia as an archipelagic country has a large enough potential for fish resou
 
 ## Features for Consumer-side
 
-| Profile Consumer | Fish Caught | Order | Transaction | History |
-| ------ | ------ | ------ | ----- | ----- | 
-| Partner's name | Fish name | Quantity | Payment | Status Track |
-| Phone Number | Notes  | Total price |  |  |
-| Email | Photo |  |  |  |
-|  | Harbor location |  |  |  |
-|  | Weight |  |  |  |
-|  | Quantity |  |  |  |
-|  | Price |  |  |  |
+| Profile Consumer | Fish Caught | Cart | Ordering | History | Freshness Detection |
+| ------ | ------ | ------ | ----- | ----- | ----- |
+| Name | Fish name | Quantity | Time order | Status Order | Take a picture from fish eye |
+| Phone Number | Description  | Expedition service | Address  | Result of freshness detection |
+| Email | Photo | Notes |  |  | |
+| Address | Harbor location | Total price |  |  | |
+| Password | Time caught |  |  |  | |
+|  | Stock |  |  |  | |
+|  | Price |  |  |  | |
 
-POV Consumer: 
-- Profile
-- Fish caught
-- Order
-- Payment
-- History
 
-Optional:
-- Chat
-- Review order
-- Notification
-
-*notes: consumer -> partner business (pelaku bisnis/mitra)*
 
 <!-- UI FI$HKU APP -->
 ## UI FI$HKU APP
