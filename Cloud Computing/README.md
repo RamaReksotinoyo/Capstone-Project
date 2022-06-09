@@ -1,12 +1,10 @@
 ## Architecture Cloud Design
-![cloud design fix](https://user-images.githubusercontent.com/79828903/172829128-d39f0021-a15f-4157-bb16-7ea554a72604.jpg)
-
-
-
-## Estimate Pricing GCP for Fi$hku!
-[Estimate Pricing GCP](https://cloud.google.com/products/calculator/#id=15a7b9d9-20c5-4b95-95c4-cd0882e9e64a)
+![cloud DESIGN FIX](https://user-images.githubusercontent.com/79828903/172856858-5a50dc5e-34aa-42db-a4db-fdb482309ef3.jpg)
 
 
 ## ERD Database
 ![image](https://user-images.githubusercontent.com/79828903/171635145-3fa006da-a30b-4e5a-8dc6-6fb6ab3b1528.png)
 
+
+## Estimate Pricing GCP 
+[Estimate Pricing GCP](https://cloud.google.com/products/calculator/#id=a1f8cf61-fc8e-46c0-86c5-c61ee57f4228)
