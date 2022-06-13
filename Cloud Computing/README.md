@@ -1,8 +1,8 @@
 ## Architecture Cloud Design
-![CLOUD DESIGN](https://user-images.githubusercontent.com/79828903/173170829-bb5fa9aa-706e-497d-8860-921d2edb6525.jpg)
+![CLOUD LITERALLY DESIGN FIX](https://user-images.githubusercontent.com/79828903/173266172-4068a42f-d18a-4440-b75a-0c7a390fb806.jpg)
 
-## ERD Database
-![image](https://user-images.githubusercontent.com/79828903/171635145-3fa006da-a30b-4e5a-8dc6-6fb6ab3b1528.png)
+## Database Diagram Tables 
+![DATABASE TABEL FIX](https://user-images.githubusercontent.com/79828903/173266021-3c77c6b3-e6c4-4ace-ad93-c6a221e88066.png)
 
 ## API endpoints doc
 [API endpoints](https://docs.google.com/spreadsheets/d/1omsQ0-AptgsEa4gTAkWx9a4gFRtGzfAZEsuSfxWwBIU/edit?usp=sharing)
